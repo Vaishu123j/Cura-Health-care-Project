@@ -70,6 +70,16 @@ public class AppointmentPage {
         }
         driver.findElement(By.xpath("//tbody/tr/td[contains(text(), " + dAy + ")]")).click();
     }
+    public void verifyAppointmentmsg() {
+	boolean msg = driver.findElement(By.xpath("*[@id=\"summary\"]/div/div/div[1]/h2")).isDisplayed();
+	if (msg = true) {
+		System.out.println(
+				msg + ": " + driver.findElement(By.xpath("*[@id=\"summary\"]/div/div/div[1]/h2")).getText());
+	} else {
+		System.out.println("Not displayed");
+	}
+
+	}
 
     public void fillCommentField(String Comment){
     	commentField.sendKeys(Comment);
