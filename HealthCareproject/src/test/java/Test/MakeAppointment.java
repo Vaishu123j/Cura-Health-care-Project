@@ -44,16 +44,9 @@ WebDriver driver;
 	}
 	
 	@Test
-	public void verifyAppointmentmsg() {
-	
-		boolean msg = driver.findElement(By.xpath("*[@id=\"summary\"]/div/div/div[1]/h2")).isDisplayed();
-		if (msg = true) {
-			System.out.println(
-					msg + ": " + driver.findElement(By.xpath("*[@id=\"summary\"]/div/div/div[1]/h2")).getText());
-		} else {
-			System.out.println("Not displayed");
-		}
-
+	public void Appointmentmsg() {
+	AppointmentPage makeAppointmentPage = new AppointmentPage(driver);
+	makeAppointmentPage.verifyAppointmentmsg();
 	}
 	
 	@Test(dependsOnMethods = "MakeAppointment")
